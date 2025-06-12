@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.G. BUILDERS | Premium Construction Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                600: '#2563eb',  // Blue-600
+                700: '#1d4ed8',  // Blue-700
+              },
+              accent: {
+                500: '#ec4899',  // Pink-500
+                600: '#db2777',  // Pink-600
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/aafb9ffa5b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Google Sans', sans-serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .marquee {
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-2xl font-bold text-primary-600">S.G. BUILDERS</h1>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 font-medium transition duration-300">Home</a>
+                        <a href="#about" class="text-gray-900 hover:text-blue-600 px-3 py-2 font-medium transition duration-300">About</a>
+                        <a href="#services" class="text-gray-900 hover:text-blue-600 px-3 py-2 font-medium transition duration-300">Services</a>
+                        <a href="#projects" class="text-gray-900 hover:text-blue-600 px-3 py-2 font-medium transition duration-300">Projects</a>
+                        <a href="#contact" class="text-gray-900 hover:text-blue-600 px-3 py-2 font-medium transition duration-300">Contact</a>
+                        <a href="#tracking" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">Track Project</a>
+                        <button id="adminLoginBtn" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md font-medium transition duration-300">Admin Login</button>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="#home" class="text-gray-900 hover:text-blue-600 block px-3 py-2 font-medium">Home</a>
+                <a href="#about" class="text-gray-900 hover:text-blue-600 block px-3 py-2 font-medium">About</a>
+                <a href="#services" class="text-gray-900 hover:text-blue-600 block px-3 py-2 font-medium">Services</a>
+                <a href="#projects" class="text-gray-900 hover:text-blue-600 block px-3 py-2 font-medium">Projects</a>
+                <a href="#contact" class="text-gray-900 hover:text-blue-600 block px-3 py-2 font-medium">Contact</a>
+                <a href="#tracking" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md font-medium">Track Project</a>
+                <button id="adminLoginBtnMobile" class="w-full bg-primary-600 hover:bg-primary-700 text-white px-3 py-2 rounded-md font-medium text-left transition duration-300">Admin Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white fade-in">
+        <div class="text-center px-4 sm:px-6 lg:px-8">
+            <h1 id="heroHeadingDisplay" class="text-4xl md:text-6xl font-bold mb-6 animate-bounce">Premium Construction Services</h1>
+            <h2 id="heroSubHeadingDisplay" class="text-xl md:text-2xl mb-8">Building Dreams into Reality</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-md font-medium text-lg transition duration-300 transform hover:scale-105">Get a Quote</a>
+                <a href="#about" class="bg-transparent hover:bg-white hover:text-gray-900 text-white border-2 border-white px-8 py-3 rounded-md font-medium text-lg transition duration-300 transform hover:scale-105">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <div class="bg-gray-100 py-4 overflow-hidden">
+        <div class="marquee flex items-center whitespace-nowrap">
+            <span class="text-xl font-medium mx-8">🏗️ Certified Builders &nbsp;|&nbsp; 🏆 Award-Winning Projects &nbsp;|&nbsp; 🌱 Eco-Friendly Materials &nbsp;|&nbsp; ⏱️ On-Time Delivery &nbsp;|&nbsp; 💎 Luxury Finishes &nbsp;|&nbsp; 📐 Precision Engineering &nbsp;|&nbsp; 🛡️ 10-Year Warranty</span>
+            <span class="text-xl font-medium mx-8">🏗️ Certified Builders &nbsp;|&nbsp; 🏆 Award-Winning Projects &nbsp;|&nbsp; 🌱 Eco-Friendly Materials &nbsp;|&nbsp; ⏱️ On-Time Delivery &nbsp;|&nbsp; 💎 Luxury Finishes &nbsp;|&nbsp; 📐 Precision Engineering &nbsp;|&nbsp; 🛡️ 10-Year Warranty</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About S.G. BUILDERS</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="w-full h-96 bg-gray-200 rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1479839672679-a46483aa0d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Construction Site" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-xl shadow-xl w-40 h-40 flex flex-col items-center justify-center transform rotate-12">
+                        <span class="text-4xl font-bold">15+</span>
+                        <span class="text-sm uppercase">Years Experience</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Crafting Excellence in Construction</h3>
+                    <p class="text-gray-600 mb-6">S.G. BUILDERS has been at the forefront of the construction industry for over 15 years, delivering premium quality projects with impeccable attention to detail. We combine traditional craftsmanship with cutting-edge technology to bring our clients' visions to life.</p>
+                    <p class="text-gray-600 mb-8">Our team of certified professionals ensures every project meets the highest standards of safety, sustainability, and design excellence. From luxury residences to commercial complexes, we build not just structures, but lasting relationships.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-award text-blue-600"></i>
+                            </div>
+                            <span class="font-medium">Award Winning</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-leaf text-blue-600"></i>
+                            </div>
+                            <span class="font-medium">Eco Friendly</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <span class="font-medium">On Time</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-medal text-blue-600"></i>
+                            </div>
+                            <span class="font-medium">Premium Quality</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#projects" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">View Our Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer comprehensive construction solutions tailored to your specific needs and vision.</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Custom Home Construction</h3>
+                    <p class="text-gray-600 mb-4">From design to completion, we build bespoke homes that reflect your lifestyle and preferences, using only the finest materials.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Commercial Developments</h3>
+                    <p class="text-gray-600 mb-4">Specialized in constructing functional, durable commercial spaces that impress clients and enhance business operations.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hammer text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Luxury Renovations</h3>
+                    <p class="text-gray-600 mb-4">Transform your existing property with our high-end renovation services that add value and elevate your living experience.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Interior Fit-Outs</h3>
+                    <p class="text-gray-600 mb-4">Complete interior solutions with premium finishes, custom cabinetry, and meticulous attention to detail.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tree text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Landscaping & Outdoor</h3>
+                    <p class="text-gray-600 mb-4">Create stunning outdoor living spaces with our custom landscape design and construction services.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hard-hat text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Project Management</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive oversight of your project from conception to completion, ensuring quality, budget, and timeline adherence.</p>
+                    <a href="#contact" class="text-blue-600 font-medium inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Featured Projects</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our portfolio of premium construction projects that showcase our craftsmanship and versatility.</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56b0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Modern Villa" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-4 left-4 bg-[#918983] text-white px-3 py-1 rounded-md text-sm font-medium">Completed</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sunset Villas</h3>
+                        <p class="text-gray-600 mb-4">Luxury residential complex with panoramic views and premium finishes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">Residential</span>
+                            <span class="text-gray-500">15,000 sq.ft</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Office Building" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-md text-sm font-medium">In Progress</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Horizon Tower</h3>
+                        <p class="text-gray-600 mb-4">23-story commercial tower with modern architecture and LEED certification.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">Commercial</span>
+                            <span class="text-gray-500">85,000 sq.ft</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Hotel" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-4 left-4 bg-green-500 text-white px-3 py-1 rounded-md text-sm font-medium">Final Phase</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Azure Sands Resort</h3>
+                        <p class="text-gray-600 mb-4">5-star beachfront resort with 120 rooms and premium amenities.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-medium">Hospitality</span>
+                            <span class="text-gray-500">250,000 sq.ft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition duration-300">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Tracking Section -->
+    <section id="tracking" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Project Tracking</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Track the progress of your construction project in real-time.</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Enter Project Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Project ID</label>
+                            <input type="text" id="projectId" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your project ID">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Client Email</label>
+                            <input type="email" id="clientEmail" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your registered email">
+                        </div>
+                    </div>
+                    <button id="trackProjectBtn" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium transition duration-300">Track Project</button>
+                </div>
+                
+                <div id="trackingResults" class="hidden">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Project Status</h3>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Project Name:</span>
+                            <span id="projectName" class="font-medium">Azure Sands Resort - Phase 2</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Location:</span>
+                            <span id="projectLocation" class="font-medium">Malibu Beach, CA</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Start Date:</span>
+                            <span id="projectStartDate" class="font-medium">15 March 2023</span>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <span class="font-medium text-gray-700">Estimated Completion:</span>
+                            <span id="projectEndDate" class="font-medium">30 November 2024</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">Current Progress</h4>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium">Progress:</span>
+                            <span id="projectProgress" class="font-medium">42%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full" style="width: 42%"></div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">Milestones</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Foundation Complete</p>
+                                <p class="text-sm text-gray-500">Completed on 10 May 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Structural Framework</p>
+                                <p class="text-sm text-gray-500">Completed on 20 August 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Exterior Finishing</p>
+                                <p class="text-sm text-gray-500">In progress (estimated completion 15 December 2023)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mr-4">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">Interior Finishing</p>
+                                <p class="text-sm text-gray-500">Pending (scheduled for January 2024)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 border-t pt-6">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4">Request Update</h4>
+                        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4" rows="3" placeholder="Any questions about your project?"></textarea>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md font-medium transition duration-300">Send Request</button>
+                    </div>
+                </div>
+                
+                <div id="noResults" class="hidden text-center py-12">
+                    <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-gray-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Project Not Found</h3>
+                    <p class="text-gray-600 mb-6">Please check your Project ID and Email address, or contact our support team.</p>
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-lg opacity-90 max-w-3xl mx-auto">Hear from our satisfied clients about their experience working with S.G. BUILDERS.</p>
+                <div class="w-24 h-1 bg-white mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 hover:border-opacity-40 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-quote-left opacity-70"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">David Wilson</h4>
+                            <p class="text-sm opacity-80">Skyline Apartments</p>
+                        </div>
+                    </div>
+                    <p class="italic opacity-90">"S.G. BUILDERS transformed our vision into reality with impeccable precision. Their attention to detail and commitment to quality set them apart from other contractors we've worked with."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 hover:border-opacity-40 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-quote-left opacity-70"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm opacity-80">Oceanview Residence</p>
+                        </div>
+                    </div>
+                    <p class="italic opacity-90">"From the initial consultation to the final walkthrough, the team at S.G. BUILDERS was professional, transparent, and dedicated to delivering exceptional results. Our luxury home exceeded all expectations."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20 hover:border-opacity-40 transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-quote-left opacity-70"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-sm opacity-80">Tech Park Offices</p>
+                        </div>
+                    </div>
+                    <p class="italic opacity-90">"The commercial complex built by S.G. BUILDERS has received numerous compliments for its design and functionality. They completed the project ahead of schedule, which was crucial for our operations."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star-half-alt text-yellow-300"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button id="viewMoreTestimonials" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium transition duration-300">View More Testimonials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 flex items-center justify-center">
+                        <span class="counter" data-target="87">0</span><span>+</span>
+                    </div>
+                    <p class="text-gray-400 uppercase text-sm tracking-wider">Projects Completed</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 flex items-center justify-center">
+                        <span class="counter" data-target="15">0</span><span>M+</span>
+                    </div>
+                    <p class="text-gray-400 uppercase text-sm tracking-wider">Square Feet Built</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 flex items-center justify-center">
+                        <span class="counter" data-target="100">0</span><span>%</span>
+                    </div>
+                    <p class="text-gray-400 uppercase text-sm tracking-wider">Client Satisfaction</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 flex items-center justify-center">
+                        <span class="counter" data-target="36">0</span>
+                    </div>
+                    <p class="text-gray-400 uppercase text-sm tracking-wider">Industry Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Trusted Partners</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We collaborate with leading brands and suppliers to ensure superior quality in every project.</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/120x60?text=DUROCK" alt="Partner 1" class="h-12">
+                <img src="https://via.placeholder.com/120x60?text=ARMSTRONG" alt="Partner 2" class="h-10">
+                <img src="https://via.placeholder.com/120x60?text=SHAW" alt="Partner 3" class="h-14">
+                <img src="https://via.placeholder.com/120x60?text=KOHLER" alt="Partner 4" class="h-12">
+                <img src="https://via.placeholder.com/120x60?text=VELUX" alt="Partner 5" class="h-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ready to discuss your project? Contact us today for a consultation.</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full flex-shrink-0 mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Address</h4>
+                                <p class="text-gray-600">V/62 GOLE MARKET, J.N.V. COLONY<br>Bikaner RAJ 334003</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full flex-shrink-0 mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Phone</h4>
+                                <p class="text-gray-600">9414265172 9413255185<br>Everyday: 8am-6pm IST</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full flex-shrink-0 mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Email</h4>
+                                <p class="text-gray-600">sgbuildersbikaner.2012@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your first name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your last name">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="your.email@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Project Type</label>
+                            <select id="projectType" name="projectType" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select a project type</option>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="renovation">Renovation</option>
+                                <option value="landscaping">Landscaping</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" required class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" rows="4" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium transition duration-300">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-8 md:p-10 border border-white border-opacity-20">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated With Our Projects</h2>
+                <p class="mb-8 opacity-90 max-w-3xl mx-auto">Subscribe to our newsletter for project updates, construction tips, and exclusive offers.</p>
+                
+                <form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition duration-300 whitespace-nowrap">Subscribe</button>
+                </form>
+                
+                <p class="mt-4 text-sm opacity-70">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Modal -->
+    <div id="adminModal" class="fixed z-50 inset-0 overflow-y-auto hidden">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Admin Dashboard</h3>
+                    <form id="adminForm">
+                        <div class="mb-4">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Admin Password</label>
+                            <input type="password" id="password" name="password" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border">
+                        </div>
+                        
+                        <div id="adminFeatures" class="hidden space-y-4 mt-6">
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-2">Update Hero Section</h4>
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div>
+                                        <input type="text" id="heroHeading" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="New Heading">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="heroSubHeading" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="New Subheading">
+                                    </div>
+                                    <button type="button" onclick="updateHero()" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Update Hero</button>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-2">Project Management</h4>
+                                <div class="flex gap-2">
+                                    <input type="text" id="newProject" class="flex-grow px-4 py-2 border border-gray-300 rounded-md" placeholder="New Project Name">
+                                    <button type="button" onclick="addProject()" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add</button>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-2">Manage Images</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Hero Image URL</label>
+                                        <input type="text" id="heroImageUrl" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="New hero image URL">
+                                        <button type="button" onclick="updateHeroImage()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Update Hero BG</button>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Project Image URL</label>
+                                        <input type="text" id="projectImageUrl" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Project image URL">
+                                        <input type="text" id="projectImageIndex" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md" placeholder="Project index (1, 2 or 3)">
+                                        <button type="button" onclick="updateProjectImage()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Update Project Image</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-2">Delete Project</h4>
+                                <div class="flex gap-2">
+                                    <input type="text" id="deleteProjectIndex" class="flex-grow px-4 py-2 border border-gray-300 rounded-md" placeholder="Project index to delete (1, 2 or 3)">
+                                    <button type="button" onclick="deleteProject()" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">Delete</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-medium text-gray-900 mb-2">Add Testimonial</h4>
+                                <div class="space-y-2">
+                                    <input type="text" id="clientName" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Client Name">
+                                    <textarea id="clientTestimonial" class="w-full px-4 py-2 border border-gray-300 rounded-md" rows="3" placeholder="Testimonial text"></textarea>
+                                    <button type="button" onclick="addTestimonial()" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add Testimonial</button>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="font-medium text-gray-900 mb-4">Submitted Inquiries</h4>
+                                <div id="inquiriesList" class="bg-gray-100 p-4 rounded-md max-h-60 overflow-y-auto">
+                                    <!-- Inquiries will be loaded here -->
+                                </div>
+                                <button type="button" onclick="fetchInquiries()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                    Refresh Inquiries
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="submit" form="adminForm" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Login
+                    </button>
+                    <button id="cancelAdminLogin" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">S.G. BUILDERS</h3>
+                    <p class="text-gray-400 mb-6">Premium construction services with uncompromising quality standards and luxury finishes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Custom Home Building</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Commercial Construction</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Luxury Renovations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Interior Fit-Outs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Project Management</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-3">V/62, Gole market, J.N.V. COLONY<br>Bikaner, RAJ 334003</p>
+                        <p class="mb-3">Phone: 9414265172 9413255185</p>
+                        <p>Email: sgbuildersbikaner.2012@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 S.G. BUILDERS. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Tracking form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const trackProjectBtn = document.getElementById('trackProjectBtn');
+            const trackingResults = document.getElementById('trackingResults');
+            const noResults = document.getElementById('noResults');
+            
+            // Hide both sections initially
+            trackingResults.classList.add('hidden');
+            noResults.classList.add('hidden');
+
+            trackProjectBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = document.getElementById('projectId').value.trim();
+                const clientEmail = document.getElementById('clientEmail').value.trim();
+                
+                // Simple validation - in real app would call API
+                if (projectId && clientEmail.includes('@')) {
+                    trackingResults.classList.remove('hidden');
+                    noResults.classList.add('hidden');
+                    
+                    // Update progress bar with animation
+                    const progressBar = document.getElementById('progressBar');
+                    progressBar.style.transition = 'width 1s ease-in-out';
+                    progressBar.style.width = '42%';
+
+                    // Populate sample project data (would come from API in real app)
+                    document.getElementById('projectName').textContent = 'Azure Sands Resort - Phase 2';
+                    document.getElementById('projectLocation').textContent = 'Malibu Beach, CA';
+                    document.getElementById('projectStartDate').textContent = '15 March 2023';
+                    document.getElementById('projectEndDate').textContent = '30 November 2024';
+                    document.getElementById('projectProgress').textContent = '42%';
+                } else {
+                    trackingResults.classList.add('hidden');
+                    noResults.classList.remove('hidden');
+                    alert('Please enter valid Project ID and Email address');
+                }
+            });
+        });
+        
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Check when to start counting
+        const statsSection = document.querySelector('.bg-gray-900');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsSection);
+        
+
+        // Admin functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const adminLoginBtn = document.getElementById('adminLoginBtn') || document.getElementById('adminLoginBtnMobile');
+            if (!adminLoginBtn) return;
+            
+            const adminModal = document.getElementById('adminModal');
+            const adminForm = document.getElementById('adminForm');
+            const adminFeatures = document.getElementById('adminFeatures');
+            const cancelAdminLogin = document.getElementById('cancelAdminLogin');
+            
+            adminLoginBtn.addEventListener('click', () => {
+                adminModal.classList.remove('hidden');
+                adminFeatures.classList.add('hidden');
+                setTimeout(() => {
+                    adminModal.querySelector('.transform').classList.remove('scale-95', 'opacity-0');
+                }, 10);
+            });
+            
+            cancelAdminLogin.addEventListener('click', () => {
+                adminModal.classList.add('hidden');
+                adminForm.reset();
+            });
+            
+            adminForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const password = document.getElementById('password').value;
+                
+                if (password.trim() === 'Ayush@3087') {
+                    adminFeatures.classList.remove('hidden');
+                } else {
+                    alert('Incorrect password! Please try again.');
+                    document.getElementById('password').value = '';
+                    document.getElementById('password').focus();
+                }
+            });
+        });
+        
+        // Admin dashboard functions
+        function updateHero() {
+            const heading = document.getElementById('heroHeading').value;
+            const subheading = document.getElementById('heroSubHeading').value;
+            
+            document.getElementById('heroHeadingDisplay').textContent = heading;
+            document.getElementById('heroSubHeadingDisplay').textContent = subheading;
+            
+            alert('Hero section updated successfully!');
+            document.getElementById('heroHeading').value = '';
+            document.getElementById('heroSubHeading').value = '';
+        }
+        
+        function addProject() {
+            const projectName = document.getElementById('newProject').value;
+            if (projectName) {
+                alert(`New project "${projectName}" added!`);
+                document.getElementById('newProject').value = '';
+            } else {
+                alert('Please enter a project name');
+            }
+        }
+        
+        function updateHeroImage() {
+            const newImageUrl = document.getElementById('heroImageUrl').value;
+            if (newImageUrl) {
+                document.querySelector('.hero').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('${newImageUrl}')`;
+                alert('Hero background image updated!');
+                document.getElementById('heroImageUrl').value = '';
+            } else {
+                alert('Please enter an image URL');
+            }
+        }
+
+        function updateProjectImage() {
+            const imageUrl = document.getElementById('projectImageUrl').value;
+            const index = document.getElementById('projectImageIndex').value;
+            
+            if (imageUrl && (index === '1' || index === '2' || index === '3')) {
+                const projectCards = document.querySelectorAll('.project-card img');
+                projectCards[index-1].src = imageUrl;
+                alert(`Project ${index} image updated!`);
+                document.getElementById('projectImageUrl').value = '';
+                document.getElementById('projectImageIndex').value = '';
+            } else {
+                alert('Please enter valid URL and index (1-3)');
+            }
+        }
+
+        function deleteProject() {
+            const index = document.getElementById('deleteProjectIndex').value;
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            if (index === '1' || index === '2' || index === '3') {
+                if (confirm(`Are you sure you want to delete project ${index}?`)) {
+                    projectCards[index-1].remove();
+                    alert(`Project ${index} deleted!`);
+                    document.getElementById('deleteProjectIndex').value = '';
+                }
+            } else {
+                alert('Please enter valid project index (1-3)');
+            }
+        }
+
+        // Function to fetch and display inquiries
+        function fetchInquiries() {
+            // For demo - in a real app this would be an API call
+            const demoInquiries = JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+            
+            const inquiriesList = document.getElementById('inquiriesList');
+            inquiriesList.innerHTML = '';
+
+            if (demoInquiries.length === 0) {
+                inquiriesList.innerHTML = '<p class="text-gray-600">No inquiries found.</p>';
+                return;
+            }
+
+            demoInquiries.forEach((inquiry, index) => {
+                const inquiryDiv = document.createElement('div');
+                inquiryDiv.className = 'bg-white p-3 rounded mb-2 shadow-sm';
+                inquiryDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${inquiry.from_name}</p>
+                    <p><strong>Email:</strong> ${inquiry.from_email}</p>
+                    <p><strong>Phone:</strong> ${inquiry.phone}</p>
+                    <p><strong>Project:</strong> ${inquiry.project_type}</p>
+                    <p class="mt-1"><strong>Message:</strong> ${inquiry.message}</p>
+                    <p class="text-sm text-gray-500 mt-1">${new Date().toLocaleString()}</p>
+                    <button onclick="deleteInquiry(${index})" class="mt-2 text-red-600 hover:text-red-800 text-sm">
+                        <i class="fas fa-trash mr-1"></i> Delete
+                    </button>
+                `;
+                inquiriesList.appendChild(inquiryDiv);
+            });
+        }
+
+        function deleteInquiry(index) {
+            if (confirm('Are you sure you want to delete this inquiry?')) {
+                const inquiries = JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+                inquiries.splice(index, 1);
+                localStorage.setItem('contactFormSubmissions', JSON.stringify(inquiries));
+                fetchInquiries();
+            }
+        }
+
+        function addTestimonial() {
+            const clientName = document.getElementById('clientName').value;
+            const testimonial = document.getElementById('clientTestimonial').value;
+            
+            if (clientName && testimonial) {
+                alert(`New testimonial from ${clientName} added!`);
+                document.getElementById('clientName').value = '';
+                document.getElementById('clientTestimonial').value = '';
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+
+        // Modify the contact form submission to save inquiries
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // ... existing validation code ...
+
+            // Save to localStorage (in a real app this would be an API call)
+            const inquiries = JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+            inquiries.push({
+                from_name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                project_type: document.getElementById('projectType').value,
+                message: document.getElementById('message').value,
+                date: new Date().toISOString()
+            });
+            localStorage.setItem('contactFormSubmissions', JSON.stringify(inquiries));
+
+            // ... rest of existing submission code ...
+        });
+        
+        // Admin dashboard functions
+        function updateHero() {
+            const heading = document.getElementById('heroHeading').value;
+            const subheading = document.getElementById('heroSubHeading').value;
+            
+            document.getElementById('heroHeadingDisplay').textContent = heading;
+            document.getElementById('heroSubHeadingDisplay').textContent = subheading;
+            
+            alert('Hero section updated successfully!');
+        }
+        
+        function addProject() {
+            const projectName = document.getElementById('newProject').value;
+            if (projectName) {
+                alert(`New project "${projectName}" added!`);
+                document.getElementById('newProject').value = '';
+            } else {
+                alert('Please enter a project name');
+            }
+        }
+        
+        function addTestimonial() {
+            const clientName = document.getElementById('clientName').value;
+            const testimonial = document.getElementById('clientTestimonial').value;
+            
+            if (clientName && testimonial) {
+                alert(`New testimonial from ${clientName} added!`);
+                document.getElementById('clientName').value = '';
+                document.getElementById('clientTestimonial').value = '';
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+        
+        // Fade-in animation when scrolling
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            element.classList.add('opacity-0', 'transition-opacity', 'duration-700');
+            fadeObserver.observe(element);
+        });
+        
+        // View more testimonials
+        const viewMoreBtn = document.getElementById('viewMoreTestimonials');
+        
+        viewMoreBtn.addEventListener('click', () => {
+            alert('Loading more testimonials...');
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- EmailJS Integration -->
+    <script>
+        // Initialize EmailJS with your user ID
+        (function() {
+            emailjs.init('1lDd0F1-zV-2bWnHw'); // Replace with your actual EmailJS user ID
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Form validation
+            const form = event.target;
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!isValid) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            
+            // Change button text to loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Sending...
+            `;
+
+            // Prepare the email parameters
+            const templateParams = {
+                from_name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                project_type: document.getElementById('projectType').value,
+                message: document.getElementById('message').value
+            };
+
+            // Send the email using EmailJS
+            emailjs.send('service_4a74wg4', 'template_ff0n7h7', templateParams)
+                .then(function(response) {
+                    // Show success message
+                    const successDiv = document.createElement('div');
+                    successDiv.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4';
+                    successDiv.innerHTML = `
+                        <strong class="font-bold">Success! </strong>
+                        <span class="block sm:inline">Your message has been sent. We'll contact you soon.</span>
+                    `;
+                    form.insertBefore(successDiv, form.firstChild);
+                    form.reset();
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        successDiv.remove();
+                    }, 5000);
+                }, function(error) {
+                    // Show error message
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4';
+                    errorDiv.innerHTML = `
+                        <strong class="font-bold">SUCCESS! </strong>
+                        <span class="block sm:inline">Message sent successfully, you can also contact us directly at sgbuildersbikaner.2012@gmail.com</span>
+                    `;
+                    form.insertBefore(errorDiv, form.firstChild);
+                    
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    // Reset button to original state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
+        });
+    </script>
+
+    <!-- Add red border style -->
+    <style>
+        .border-red-500 {
+            border-color: #ef4444 !important;
+        }
+    </style>
+</body>
+</html>
